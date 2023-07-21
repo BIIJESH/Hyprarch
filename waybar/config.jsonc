@@ -1,0 +1,111 @@
+{
+    "height": 20, // Waybar height (to be removed for auto height)
+    "layer": "top", // Waybar at top layer
+    "margin-top": 4,
+    "margin-left": 8,
+    "margin-right": 8,
+    "modules-left": ["custom/launcher", "cpu", "memory", "hyprland/window"],
+    "modules-center": ["clock", "wlr/workspaces"],
+    "modules-right": ["tray", "network", "battery", "custom/power-menu", "backlight", "pulseaudio","pulseaudio#microphone"],
+
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+          "active": " 󰮯",
+          "default": "󰊠"
+        }
+    },
+    
+    "hyprland/window": {
+        "format": "{}"
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": "<span color='#bf616a'> </span>{:%I:%M %p}",
+        "format-alt": "<span color='#bf616a'> </span>{:%a %b %d}"
+    },
+
+    "cpu": {
+      "interval": 10,
+      "format": "󰍛 {}%",
+      "max-length": 10
+    },
+    
+    "memory": {
+        "interval": 30,
+        "format": "󰘚 {}%",
+        "max-length": 10
+    },
+
+    "backlight": {
+        "device": "DP-1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+    "network": {
+        "format-wifi": "  {signalStrength}%",
+        "format-disconnected": "Disconnected  ",
+        "format-alt": "{essid} {ipaddr}/{cidr}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "  {volume}%",
+        "format-bluetooth-muted": " ",
+        "format-muted": " Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
+    },
+
+    "bluetooth": {
+        "on-click": "~/.config/waybar/scripts/rofi-bluetooth &",
+        "format": " {status}"
+    },
+
+    "battery": {
+      "bat": "BAT0",
+      "adapter": "ADP0",
+      "interval": 60,
+      "states": {
+          "warning": 30,
+          "critical": 15
+      },
+      "max-length": 20,
+      "format": "{icon} {capacity}%",
+      "format-warning": "{icon} {capacity}%",
+      "format-critical": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": "  {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-full": "  {capacity}%",
+      "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "custom/launcher": {
+        "format": "",
+        "on-click": "wofi -show drun"
+    }
+}

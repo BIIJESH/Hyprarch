@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# This is a quick and dirty script there are no error checking
+
+#### Check for yay ####
+ISYAY=/sbin/yay
+if [ -f "$ISYAY" ]; then 
+    echo -e "yay was located, moving on.\n"
+    yay -Suy   
+else 
+    echo "installing dependency yay..."
+    ./install_yay.sh
+fi
+
+### Install all of the above pacakges ####
+read -n1 -rep 'Would you like to install the packages? (y,n)' INST
+if [[ $INST == "Y" || $INST == "y" ]]; then
+    #Install package via pacman
+    sudo pacman -S --noconfirm pipewire pipewire-alsa pipewire-audio pipewire-jack ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar code thunar xdg-desktop-portal-hyprland tumbler gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-passwordsafe gnome-disk-utility gvfs-mtp btop qbittorrent unzip thunar-archive-plugin
+
+    #Install packages via yay (AUR)
+    yay -S --noconfirm wlogout swaylock-effects catppuccin-gtk-theme-mocha
+fi
+
+### Copy Config Files ###
+read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
+if [[ $CFG == "Y" || $CFG == "y" ]]; then
+    echo -e "Copying config files...\n"
+    cp -R btop ~/.config/
+    cp -R dunst ~/.config/
+    cp -R gtk-3.0 ~/.config/
+    cp -R hypr ~/.config/
+    cp -R kitty ~/.config/
+    cp -R neofetch ~/.config/
+    cp -R swaylock ~/.config/
+    cp -R waybar ~/.config/
+    cp -R wlogout ~/.config/
+    cp -R xfce4 ~/.config/
+fi
+
+### Script is done ###
+echo -e "Script had completed.\n"
+echo -e "You can start Hyprland by typing Hyprland.\n"
+read -n1 -rep 'Would you like to start Hyprland now? (y,n)' HYP
+if [[ $HYP == "Y" || $HYP == "y" ]]; then
+    exec Hyprland
+else
+    exit
+fi
