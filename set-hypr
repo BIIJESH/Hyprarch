@@ -8,7 +8,7 @@ if [ -f "$ISYAY" ]; then
     echo -e "yay was located, moving on.\n"
     yay -Suy   
 else 
-    echo "installing dependency yay..."
+    echo "installing yay..."
     ./install_yay.sh
 fi
 
