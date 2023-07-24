@@ -6,12 +6,7 @@
   window#waybar {
     background-color: rgba(24, 24, 37, 0.4);
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: 0.5s;
-    border-top: 8px transparent;
-    border-radius: 8px;
-    transition-duration: 0.5s;
-    margin: 16px 16px;
+    border-radius: 10px;
   }
   
   window#waybar.hidden {
