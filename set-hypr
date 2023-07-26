@@ -8,7 +8,7 @@ if [ -f "$ISYAY" ]; then
     echo -e "yay was located, moving on.\n"
     yay -Suy   
 else 
-    echo "installing dependency yay..."
+    echo "installing yay..."
     ./install_yay.sh
 fi
 
@@ -16,10 +16,11 @@ fi
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     #Install package via pacman
-    sudo pacman -S --noconfirm pipewire pipewire-alsa pipewire-audio pipewire-jack ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar code thunar xdg-desktop-portal-hyprland tumbler gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-passwordsafe gnome-disk-utility gvfs-mtp btop qbittorrent unzip thunar-archive-plugin
+    sudo pacman -S pipewire pipewire-alsa pipewire-audio pipewire-jack ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar code thunar xdg-desktop-portal-hyprland tumbler gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-passwordsafe gnome-disk-utility gvfs-mtp btop qbittorrent unzip thunar-archive-plugin
 
     #Install packages via yay (AUR)
-    yay -S --noconfirm wlogout swaylock-effects catppuccin-gtk-theme-mocha
+    echo "installing packages from AUR"
+    yay -S --noconfirm wlogout swaylock-effects catppuccin-gtk-theme-mocha xwaylandvideobridge-cursor-mode-2-git
 fi
 
 ### Copy Config Files ###
