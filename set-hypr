@@ -20,7 +20,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Install packages via yay (AUR)
     echo "installing packages from AUR"
-    yay -S --noconfirm wlogout swaylock-effects catppuccin-gtk-theme-mocha xwaylandvideobridge-cursor-mode-2-git
+    yay -S --noconfirm cava wlogout swaylock-effects catppuccin-gtk-theme-mocha xwaylandvideobridge-cursor-mode-2-git
 fi
 
 ### Copy Config Files ###

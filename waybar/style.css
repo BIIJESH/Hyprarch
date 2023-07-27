@@ -29,7 +29,7 @@
   #window {
     color: #bac2de;
   }
-
+  
   #battery,
   #cpu,
   #memory,
@@ -45,7 +45,7 @@
   #bluetooth {
     padding: 0 10px;
     color: #cdd6f4;
-    background-color: rgba(30, 30, 46, 0.92);
+    background-color: #11111b
   }
   
   #custom-launcher {
@@ -70,10 +70,10 @@
   }
 
   #clock {
-    color: #c8d2e0;
+    color: #cdd6f4;
     padding: 0 5px;
     border-radius: 10px 0px 0px 10px;
-    background-color: rgba(30, 30, 46, 0.92);
+    background-color: #11111b;
   }
 
   #workspaces{
@@ -109,7 +109,7 @@
   #battery.charging,
   #battery.full,
   #battery.plugged {
-    color: #a6d189;
+    color: #26a65b;
   }
   
   @keyframes blink {
