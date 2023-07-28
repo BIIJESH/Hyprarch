@@ -40,7 +40,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
 fi
 
 ### Install ZSH ###
-read -n1 -rep 'Would you like to copy config files? (y,n)' ZIH
+read -n1 -rep 'Would you like to install zsh? (y,n)' ZIH
 if [[ $ZIH == "Y" || $ZIH == "y" ]]; then
     echo -e "Installing zsh and plugins...\n"
     yay -S --noconfirm zsh oh-my-zsh-git zsh-theme-powerlevel10k-git zsh-autosuggestions-git zsh-syntax-highlighting-git
