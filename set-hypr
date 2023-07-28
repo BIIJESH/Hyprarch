@@ -16,7 +16,7 @@ fi
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     #Install package via pacman
-    echo "y" | sudo pacman -S pipewire pipewire-alsa pipewire-audio pipewire-jack ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar code thunar xdg-desktop-portal-hyprland tumbler gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-passwordsafe gnome-disk-utility gvfs-mtp btop qbittorrent unzip thunar-archive-plugin
+    echo "y" | sudo pacman -S pipewire pipewire-alsa pipewire-audio pipewire-jack ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk ttf-font-awesome polkit-gnome mpv imv ffmpeg neovim hyprland pipewire dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar code thunar xdg-desktop-portal-hyprland tumbler gvfs ntfs-3g cliphist lxappearance xfce4-settings clang bluez bluez-utils pulseaudio-bluetooth gnome-passwordsafe gnome-disk-utility gvfs-mtp btop qbittorrent unzip thunar-archive-plugin file-roller 
 
     #Install packages via yay (AUR)
     echo -e "Installing packages from AUR...\n"
