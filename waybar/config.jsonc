@@ -6,7 +6,7 @@
     "margin-right": 8,
     "modules-left": ["custom/launcher", "cpu", "memory", "hyprland/window"],
     "modules-center": ["clock", "wlr/workspaces"],
-    "modules-right": ["tray", "network", "battery", "custom/power-menu", "backlight", "pulseaudio","pulseaudio#microphone"],
+    "modules-right": ["tray", "network", "battery", "temperature", "backlight", "pulseaudio","pulseaudio#microphone"],
 
     "wlr/workspaces": {
         "format": "{icon}",
@@ -81,8 +81,12 @@
     },
 
     "bluetooth": {
-        "on-click": "~/.config/waybar/scripts/rofi-bluetooth &",
         "format": " {status}"
+    },
+
+    "temperature": {
+        "format": " {temperatureC}°C",
+        "format-alt": " {temperatureF}°F"
     },
 
     "battery": {
@@ -91,7 +95,7 @@
       "interval": 60,
       "states": {
           "warning": 30,
-          "critical": 15
+          "critical": 20
       },
       "max-length": 20,
       "format": "{icon} {capacity}%",
@@ -105,7 +109,6 @@
     },
 
     "custom/launcher": {
-        "format": "",
-        "on-click": "wofi -show drun"
+        "format": ""
     }
 }
